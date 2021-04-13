@@ -1,0 +1,16 @@
+---
+- name: Update APT
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Update repositories
+      apt:
+          cache_valid_time: 86400
+          update_cache: yes
+
+- name: Install Fail2ban
+  hosts: all
+  become: yes
+  roles:
+    - fail2ban
