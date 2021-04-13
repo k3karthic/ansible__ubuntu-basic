@@ -15,7 +15,8 @@ Copy your SSH private key for your server into the `ssh` folder as `oracle`. Alt
 This Ansible playbook performs the following tasks on an Ubuntu server,
 
 1. Update apt repositories
-2. Install and configure Fail2ban for SSH
+1. Install and configure Fail2ban for SSH
+1. Install and configure swap space equal to total memory
 
 ## Run
 
