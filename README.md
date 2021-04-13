@@ -10,6 +10,13 @@ Configure the authentication as per the [Oracle Guide](https://docs.oracle.com/e
 
 Copy your SSH private key for your server into the `ssh` folder as `oracle`. Alternatively, edit the `inventory/group_vars/all.yml` file and replace the value of `ansible_ssh_private_key_file` with the location of the private key.
 
+## Configuration Overview
+
+This Ansible playbook performs the following tasks on an Ubuntu server,
+
+1. Update apt repositories
+2. Install and configure Fail2ban for SSH
+
 ## Run
 
 ```
