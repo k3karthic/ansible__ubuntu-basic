@@ -33,7 +33,7 @@ This Ansible playbook performs the following tasks on an Ubuntu server,
 
 ## Encryption
 
-Sensitive files like the SSH private keys are encrypted before being stored in the repository.
+Sensitive files like the SSH private keys are encrypted before being stored in the repository. The unencrypted file paths must be added to `.gitignore`.
 
 Use the following command to decrypt the files after cloning the repository,
 
