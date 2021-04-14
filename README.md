@@ -2,7 +2,9 @@
 
 ## Deploy for Free
 
-You can run two servers for free by using the [Oracle Cloud Always Free](https://www.oracle.com/cloud/free/#always-free) tier. Terraform script for deploying a server can be found at [terraform__oci-instance-1](https://github.com/k3karthic/terraform__oci-instance-1).
+You can run two servers for free by using the [Oracle Cloud Always Free](https://www.oracle.com/cloud/free/#always-free) tier.
+
+Terraform script for deploying a server in the free tier can be found at [https://github.com/k3karthic/terraform__oci-instance-1](https://github.com/k3karthic/terraform__oci-instance-1).
 
 ## Configuration
 
