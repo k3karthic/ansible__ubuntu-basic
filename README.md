@@ -19,6 +19,12 @@ All public Ubuntu instances are assumed to have a freeform tag `os: ubuntu`.
     1. Configure the authentication as per the [Oracle Guide](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File).
 1. Set username and ssh authentication in `inventory/group_vars/all.yml`
 
+### Swap Configuration
+
+The file `roles/swap/vars/main.yml` contains the following variables that can be changed,
+1. *swap_file_path*: File path where swapfile is stored. (Default: /swapfile.swap)
+2. *swap_swappiness*: Kernel parameter to change how often swap is used. (Default: 60)
+
 ## Playbook Overview
 
 This Ansible playbook performs the following tasks on an Ubuntu server,
