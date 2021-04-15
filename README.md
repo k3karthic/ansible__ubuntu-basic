@@ -12,7 +12,7 @@ This playbook uses the Oracle [Ansible Inventory Plugin](https://docs.oracle.com
 
 All public Ubuntu instances are assumed to have a freeform tag `os: ubuntu`.
 
-## Configuration
+## Playbook Configuration
 
 1. Modify `inventory/oracle.oci.yml`
     1. specify the region where you have deployed your server on Oracle Cloud.
@@ -33,8 +33,9 @@ This Ansible playbook performs the following tasks on an Ubuntu server,
 1. Install and configure Fail2ban for SSH
 1. Install and configure swap space equal to total memory
 
-## Run
+## Deployment
 
+Run the playbook using the following command,
 ```
 ./bin/apply.sh
 ```
