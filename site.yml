@@ -20,3 +20,9 @@
   become: yes
   roles:
     - fail2ban
+
+- name: Disable snapd
+  hosts: all
+  become: yes
+  roles:
+    - snapd

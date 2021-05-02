@@ -1,0 +1,12 @@
+---
+- name: stop and disable oracle cloud agent and snapd
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: False
+    state: stopped
+  with_items:
+    - snap.oracle-cloud-agent.oracle-cloud-agent-updater
+    - snap.oracle-cloud-agent.oracle-cloud-agent
+    - snapd.seeded
+    - snapd.socket
+    - snapd
