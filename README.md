@@ -17,7 +17,13 @@ All public Ubuntu instances are assumed to have a freeform tag `os: ubuntu`.
 1. Modify `inventory/oracle.oci.yml`
     1. specify the region where you have deployed your server on Oracle Cloud.
     1. Configure the authentication as per the [Oracle Guide](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File).
-1. Set username and ssh authentication in `inventory/group_vars/all.yml`
+1. Set username and ssh authentication in `inventory/group_vars/`
+
+If you are using mutliple SSH key pairs, use the following command to add them to ssh-agent before running the playbook.
+```
+eval "$(ssh-agent -s)"
+ssh-add <path to keypair>
+```
 
 ### Swap Configuration
 
