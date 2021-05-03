@@ -1,27 +1,27 @@
 ---
-- name: Update APT
+- name: update apt
   hosts: all
   become: yes
 
   tasks:
-    - name: Update repositories
+    - name: update repositories
       apt:
           cache_valid_time: 86400
           update_cache: yes
 
-- name: Configure 100% swap space
+- name: configure 100% swap space
   hosts: all
   become: yes
   roles:
     - swap
 
-- name: Install Fail2ban
+- name: install fail2ban
   hosts: all
   become: yes
   roles:
     - fail2ban
 
-- name: Disable snapd
+- name: disable snapd
   hosts: all
   become: yes
   roles:

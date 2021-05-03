@@ -1,10 +1,10 @@
 ---
-- name: Install dependencies
-  apt:
+- name: install dependencies
+  ansible.builtin.apt:
     name: fail2ban
     state: present
 
-- name: Enable & run fail2ban
+- name: enable & run fail2ban
   ansible.builtin.systemd:
     name: fail2ban
     enabled: True

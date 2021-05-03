@@ -1,19 +1,19 @@
 ---
 - name: check if swap file exists
-  stat:
+  ansible.builtin.stat:
     path: "{{ swap_file_path }}"
   register: swap_file_check
 
 - name: create swap file
-  command: "dd if=/dev/zero of={{ swap_file_path }} bs=1M count={{ ansible_memory_mb['real']['total'] }}"
+  ansible.builtin.command: "dd if=/dev/zero of={{ swap_file_path }} bs=1M count={{ ansible_memory_mb['real']['total'] }}"
   when: not swap_file_check.stat.exists
 
 - name: format swap file
-  command: "mkswap {{ swap_file_path }}"
+  ansible.builtin.command: "mkswap {{ swap_file_path }}"
   when: not swap_file_check.stat.exists
 
 - name: set permissions for swap file
-  file:
+  ansible.builtin.file:
     path: "{{ swap_file_path }}"
     mode: '0600'
 
@@ -24,10 +24,10 @@
     state: present
 
 - name: add swap to fstab
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: /etc/fstab
     regexp: "{{ swap_file_path }}"
     line: "{{ swap_file_path }} none swap sw 0 0"
 
 - name: turn on swap
-  command: swapon -a
+  ansible.builtin.command: swapon -a

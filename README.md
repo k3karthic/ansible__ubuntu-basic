@@ -4,7 +4,9 @@
 
 You can run two servers for free using the [Oracle Cloud Always Free](https://www.oracle.com/cloud/free/#always-free) tier.
 
-Terraform script for deploying a server in the free tier can be found at [https://github.com/k3karthic/terraform__oci-instance-1](https://github.com/k3karthic/terraform__oci-instance-1).
+Terraform scripts for deploying a server under the free tier can be found below,
+* [https://github.com/k3karthic/terraform__oci-instance-1](https://github.com/k3karthic/terraform__oci-instance-1).
+* [https://github.com/k3karthic/terraform__oci-instance-2](https://github.com/k3karthic/terraform__oci-instance-2).
 
 ## Dynamic Inventory
 
@@ -38,6 +40,7 @@ This Ansible playbook performs the following tasks on an Ubuntu server,
 1. Update apt repositories
 1. Install and configure Fail2ban for SSH
 1. Install and configure swap space equal to total memory
+1. Disable snapd for lower memory consumption
 
 ## Deployment
 
