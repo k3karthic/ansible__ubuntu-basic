@@ -1,19 +1,21 @@
 # Ansible - Basic Setup for Ubuntu 20.04
 
+The Ansible playbook in this repository performs the following tasks on an Ubuntu 20.04 instance,
+1. Update apt repositories
+1. Install and configure Fail2ban for SSH
+1. Install and configure swap space equal to total memory
+1. Disable snapd for lower memory consumption
+
+The playbook assumes the instance runs in Oracle Cloud using the terraform scripts below,
+* [https://github.com/k3karthic/terraform__oci-instance-1](https://github.com/k3karthic/terraform__oci-instance-1).
+* [https://github.com/k3karthic/terraform__oci-instance-2](https://github.com/k3karthic/terraform__oci-instance-2).
+
 ## Requirements
 
 Install the following Ansible modules before running the playbook,
 ```
 ansible-galaxy collection install oracle.oci
 ```
-
-## Deploy for Free
-
-You can run two servers for free using the [Oracle Cloud Always Free](https://www.oracle.com/cloud/free/#always-free) tier.
-
-Terraform scripts for deploying a server under the free tier can be found below,
-* [https://github.com/k3karthic/terraform__oci-instance-1](https://github.com/k3karthic/terraform__oci-instance-1).
-* [https://github.com/k3karthic/terraform__oci-instance-2](https://github.com/k3karthic/terraform__oci-instance-2).
 
 ## Dynamic Inventory
 
@@ -39,15 +41,6 @@ ssh-add <path to keypair>
 The file `roles/swap/vars/main.yml` contains the following variables that you can change,
 1. *swap_file_path*: File path where swapfile is stored. (Default: /swapfile.swap)
 2. *swap_swappiness*: Kernel parameter to change how often swap is used. (Default: 60)
-
-## Playbook Overview
-
-This Ansible playbook performs the following tasks on an Ubuntu server,
-
-1. Update apt repositories
-1. Install and configure Fail2ban for SSH
-1. Install and configure swap space equal to total memory
-1. Disable snapd for lower memory consumption
 
 ## Deployment
 
