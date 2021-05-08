@@ -1,5 +1,12 @@
 # Ansible - Basic Setup for Ubuntu 20.04
 
+## Requirements
+
+Install the following Ansible modules before running the playbook,
+```
+ansible-galaxy collection install oracle.oci
+```
+
 ## Deploy for Free
 
 You can run two servers for free using the [Oracle Cloud Always Free](https://www.oracle.com/cloud/free/#always-free) tier.
