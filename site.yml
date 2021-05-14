@@ -26,3 +26,9 @@
   become: yes
   roles:
     - snapd
+
+- name: weekly reboot
+  hosts: all
+  become: yes
+  roles:
+    - reboot

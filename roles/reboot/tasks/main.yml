@@ -1,0 +1,16 @@
+---
+- name: install reboot script
+  ansible.builtin.copy:
+    src: reboot.sh
+    dest: /root/reboot.sh
+    owner: root
+    group: root
+    mode: "0700"
+
+- name: run reboot every sunday
+  ansible.builtin.cron:
+    name: "update and reboot"
+    minute: "30"
+    hour: "5"
+    weekday: "0"
+    job: "/root/reboot.sh"
