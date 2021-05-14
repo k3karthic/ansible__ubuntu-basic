@@ -4,6 +4,14 @@
     name: fail2ban
     state: present
 
+- name: strict ssh jail
+  ansible.builtin.copy:
+    src: sshd.conf
+    dest: /etc/fail2ban/jail.d/sshd.conf
+    owner: "root"
+    group: "root"
+    mode: "0644"
+
 - name: enable & run fail2ban
   ansible.builtin.systemd:
     name: fail2ban
