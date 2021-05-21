@@ -14,6 +14,7 @@ The playbook assumes the instance runs in Oracle Cloud using the terraform scrip
 
 Install the following Ansible modules before running the playbook,
 ```
+pip install oci
 ansible-galaxy collection install oracle.oci
 ```
 
