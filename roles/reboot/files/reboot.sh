@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get upgrade -y --no-install-recommends
-reboot
+/usr/bin/apt-get update
+DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get upgrade -y --no-install-recommends
+/usr/sbin/reboot
