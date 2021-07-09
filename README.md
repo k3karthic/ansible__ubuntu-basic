@@ -2,11 +2,13 @@
 
 The Ansible playbook in this repository performs the following tasks on an Ubuntu 20.04 instance,
 1. Update apt repositories
-1. Install and configure Fail2ban for SSH
-1. Install and configure swap space equal to total memory
-1. Disable snapd for lower memory consumption
+1. Install and configure fail2ban for SSH
+2. Install daily rootkit detection scripts using chkrootkit and rkhunter
+3. Install and configure swap space equal to total memory
+4. Disable snapd for lower memory consumption
+5. Install weekly script to update and reboot the system
 
-The playbook assumes the instance runs in Oracle Cloud using the terraform scripts below,
+The playbook assumes the instance runs in the Oracle Cloud using the terraform scripts below,
 * [https://github.com/k3karthic/terraform__oci-instance-1](https://github.com/k3karthic/terraform__oci-instance-1).
 * [https://github.com/k3karthic/terraform__oci-instance-2](https://github.com/k3karthic/terraform__oci-instance-2).
 
@@ -18,7 +20,7 @@ All public Ubuntu instances are assumed to have a freeform tag `os: ubuntu`.
 
 ## Requirements
 
-Use the following commands to install the the Ansible plugin before running the playbook.
+Use the following commands to install the required Ansible modules and plugins before running the playbook.
 ```
 pip install oci
 ansible-galaxy collection install oracle.oci
@@ -56,13 +58,13 @@ Sensitive files like the SSH private keys are encrypted before being stored in t
 
 You must add the unencrypted file paths to `.gitignore`.
 
-Use the following command to decrypt the files after cloning the repository,
+Use the following command to decrypt the files after cloning the repository.
 
 ```
 ./bin/decrypt.sh
 ```
 
-Use the following command after running terraform to update the encrypted files,
+Use the following command after running terraform to update the encrypted files.
 
 ```
 ./bin/encrypt.sh <gpg key id>
