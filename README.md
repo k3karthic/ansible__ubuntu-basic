@@ -25,7 +25,7 @@ The file `roles/swap/vars/main.yml` contains the following variables that you ca
 
 Run the playbook using the following command,
 ```
-./bin/apply_local.sh
+$ ./bin/apply_local.sh
 ```
 
 ## Oracle Cloud Instance
@@ -42,8 +42,8 @@ Run the playbook using the following command,
 
 Install the following before running the playbook,
 ```
-pip install oci
-ansible-galaxy collection install oracle.oci
+$ pip install oci
+$ ansible-galaxy collection install oracle.oci
 ```
 
 ### Dynamic Inventory
@@ -63,12 +63,12 @@ To use more than a single SSH keypair (with passphrases), use ssh-agent to store
 
 Run the following command to start `ssh-agent`,
 ```
-eval "$(ssh-agent -s)"
+$ eval "$(ssh-agent -s)"
 ```
 
 Add each keypair using the following command,
 ```
-ssh-add <path to keypair>
+$ ssh-add <path to keypair>
 ```
 
 #### Swap Configuration
@@ -81,7 +81,7 @@ The file `roles/swap/vars/main.yml` contains the following variables that you ca
 
 Run the playbook using the following command,
 ```
-./bin/apply.sh
+$ ./bin/apply.sh
 ```
 
 ## Encryption
@@ -91,11 +91,11 @@ Encrypt sensitive files (SSH private keys) before saving them. `.gitignore` must
 Use the following command to decrypt the files after cloning the repository.
 
 ```
-./bin/decrypt.sh
+$ ./bin/decrypt.sh
 ```
 
 Use the following command after running terraform to update the encrypted files.
 
 ```
-./bin/encrypt.sh <gpg key id>
+$ ./bin/encrypt.sh <gpg key id>
 ```
