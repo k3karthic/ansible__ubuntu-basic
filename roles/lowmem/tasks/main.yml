@@ -10,6 +10,7 @@
     - snap.oracle-cloud-agent.oracle-cloud-agent
 
 - name: stop and disable snapd
+  when: ansible_distribution == 'Ubuntu'
   ansible.builtin.systemd:
     name: "{{ item }}"
     enabled: False
