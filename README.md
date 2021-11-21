@@ -8,7 +8,29 @@ The Ansible playbook in this repository does the following tasks on Ubuntu 20.04
 4. Disable snapd for lower memory consumption
 5. Install weekly script to update and reboot the system
 
-The playbook assumes the instance runs in the Oracle Cloud using the terraform scripts below,
+## Code Mirrors
+
+* GitHub: [github.com/k3karthic/ansible__ubuntu-basic](https://github.com/k3karthic/ansible__ubuntu-basic/)
+* Codeberg: [codeberg.org/k3karthic/ansible__ubuntu-basic](https://codeberg.org/k3karthic/ansible__ubuntu-basic/)
+
+## Local Instance
+
+### Swap Configuration
+
+The file `roles/swap/vars/main.yml` contains the following variables that you can change,
+1. *swap_file_path*: File path for the swapfile. (Default: /swapfile.swap)
+2. *swap_swappiness*: Kernel parameter to change how often it will use swap. (Default: 60)
+
+### Deployment
+
+Run the playbook using the following command,
+```
+./bin/apply_local.sh
+```
+
+## Oracle Cloud Instance
+
+**Assumption:** The instance runs in Oracle Cloud using either of the scripts below,
 * terraform__oci-instance-1
     * GitHub: [github.com/k3karthic/terraform__oci-instance-1](https://github.com/k3karthic/terraform__oci-instance-1)
     * Codeberg: [codeberg.org/k3karthic/terraform__oci-instance-1](https://codeberg.org/k3karthic/terraform__oci-instance-1)
@@ -16,12 +38,7 @@ The playbook assumes the instance runs in the Oracle Cloud using the terraform s
     * GitHub: [github.com/k3karthic/terraform__oci-instance-2](https://github.com/k3karthic/terraform__oci-instance-2)
     * Codeberg: [codeberg.org/k3karthic/terraform__oci-instance-2](https://codeberg.org/k3karthic/terraform__oci-instance-2)
 
-## Code Mirrors
-
-* GitHub: [github.com/k3karthic/ansible__ubuntu-basic](https://github.com/k3karthic/ansible__ubuntu-basic/)
-* Codeberg: [codeberg.org/k3karthic/ansible__ubuntu-basic](https://codeberg.org/k3karthic/ansible__ubuntu-basic/)
-
-## Requirements
+### Requirements
 
 Install the following before running the playbook,
 ```
@@ -29,13 +46,13 @@ pip install oci
 ansible-galaxy collection install oracle.oci
 ```
 
-## Dynamic Inventory
+### Dynamic Inventory
 
 The Oracle [Ansible Inventory Plugin](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/ansibleinventoryintro.htm) dynamically populates public Ubuntu instances.
 
 The target Ubuntu instances must have the freeform tag `os: ubuntu`.
 
-## Playbook Configuration
+### Playbook Configuration
 
 1. Update `inventory/oracle.oci.yml`,
     1. specify the region where you have deployed your server on Oracle Cloud.
@@ -54,13 +71,13 @@ Add each keypair using the following command,
 ssh-add <path to keypair>
 ```
 
-### Swap Configuration
+#### Swap Configuration
 
 The file `roles/swap/vars/main.yml` contains the following variables that you can change,
 1. *swap_file_path*: File path for the swapfile. (Default: /swapfile.swap)
 2. *swap_swappiness*: Kernel parameter to change how often it will use swap. (Default: 60)
 
-## Deployment
+### Deployment
 
 Run the playbook using the following command,
 ```
