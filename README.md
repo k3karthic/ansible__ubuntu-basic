@@ -48,7 +48,7 @@ $ ansible-galaxy collection install oracle.oci
 
 ### Dynamic Inventory
 
-The Oracle [Ansible Inventory Plugin](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/ansibleinventoryintro.htm) dynamically populates public Ubuntu instances.
+The Oracle [Ansible Inventory Plugin](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/ansibleinventoryintro.htm) populates public Ubuntu instances.
 
 The target Ubuntu instances must have the freeform tag `os: ubuntu`.
 
@@ -75,7 +75,7 @@ $ ssh-add <path to keypair>
 
 The file `roles/swap/vars/main.yml` contains the following variables that you can change,
 1. *swap_file_path*: File path for the swapfile. (Default: /swapfile.swap)
-2. *swap_swappiness*: Kernel parameter to change how frequently it will use swap. (Default: 60)
+2. *swap_swappiness*: Kernel parameter to change how often it will use swap. (Default: 60)
 
 ### Deployment
 
