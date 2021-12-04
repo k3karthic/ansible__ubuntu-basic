@@ -1,4 +1,4 @@
-# Ansible - Basic Setup for Ubuntu 20.04/Debian 11
+# Ansible — Basic Setup for Ubuntu 20.04/Debian 11
 
 The Ansible playbook in this repository does the following tasks on Ubuntu 20.04/Debian 11,
 1. Update apt repositories
@@ -75,7 +75,7 @@ $ ssh-add <path to keypair>
 
 The file `roles/swap/vars/main.yml` contains the following variables that you can change,
 1. *swap_file_path*: File path for the swapfile. (Default: /swapfile.swap)
-2. *swap_swappiness*: Kernel parameter to change how often it will use swap. (Default: 60)
+2. *swap_swappiness*: Kernel parameter to change how frequently it will use swap. (Default: 60)
 
 ### Deployment
 
@@ -88,13 +88,13 @@ $ ./bin/apply.sh
 
 Encrypt sensitive files (SSH private keys) before saving them. `.gitignore` must contain the unencrypted file paths.
 
-Use the following command to decrypt the files after cloning the repository.
+Use the following command to decrypt the files after cloning the repository,
 
 ```
 $ ./bin/decrypt.sh
 ```
 
-Use the following command after running terraform to update the encrypted files.
+Use the following command after running terraform to update the encrypted files,
 
 ```
 $ ./bin/encrypt.sh <gpg key id>
