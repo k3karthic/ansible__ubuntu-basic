@@ -1,6 +1,6 @@
 # Ansible — Basic Setup for Ubuntu 20.04/Debian 11
 
-The Ansible playbook in this repository does the following tasks on Ubuntu 20.04/Debian 11,
+The Ansible playbook in this repository performs the following tasks on Ubuntu 20.04/Debian 11,
 1. Update apt repositories
 1. Install and configure fail2ban for SSH
 2. Install daily rootkit detection scripts using chkrootkit and rkhunter
