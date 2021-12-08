@@ -15,7 +15,7 @@ The Ansible playbook in this repository performs the following tasks,
 
 ## Local Instance
 
-### Swap Configuration
+### Configuration
 
 The file `roles/swap/vars/main.yml` contains the following variables that you can change,
 1. *swap_file_path*: File path for the swapfile. (Default: /swapfile.swap)
@@ -52,7 +52,7 @@ The Oracle [Ansible Inventory Plugin](https://docs.oracle.com/en-us/iaas/Content
 
 All target Ubuntu instances must have the freeform tag `os: ubuntu`.
 
-### Playbook Configuration
+### Configuration
 
 1. Update `inventory/oracle.oci.yml`,
     1. Specify the region where you have deployed your server on Oracle Cloud. List of regions are at [docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
@@ -71,7 +71,7 @@ Add each keypair using the following command,
 $ ssh-add <path to keypair>
 ```
 
-#### Swap Configuration
+#### Swap
 
 The file `roles/swap/vars/main.yml` contains the following variables that you can change,
 1. *swap_file_path*: File path for the swapfile. (Default: /swapfile.swap)
