@@ -1,4 +1,4 @@
-# Ansible — Basic Setup for Ubuntu 20.04/Debian 11
+# Ansible — Basic Setup for Ubuntu 22.04/Debian 11
 
 The Ansible playbook in this repository performs the following tasks,
 1. Update apt repositories
