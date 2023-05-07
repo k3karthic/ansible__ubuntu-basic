@@ -62,18 +62,6 @@ All target Ubuntu instances must have the freeform tag `os: ubuntu`.
     1. Configure the authentication as per the [Oracle Guide](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm#SDK_and_CLI_Configuration_File)
 1. Set username and ssh authentication in `inventory/group_vars/`
 
-To use more than a single SSH keypair (with passphrases), use ssh-agent to store them.
-
-Run the following command to start `ssh-agent`,
-```
-$ eval "$(ssh-agent -s)"
-```
-
-Add each keypair using the following command,
-```
-$ ssh-add <path to keypair>
-```
-
 #### Swap
 
 The file `roles/swap/vars/main.yml` contains the following variables that you can change,
