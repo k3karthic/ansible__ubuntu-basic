@@ -1,5 +1,5 @@
 ---
-- name: stop and disable oracle cloud agent
+- name: Stop and disable oracle cloud agent
   when: ansible_facts["chassis_asset_tag"] == "OracleCloud.com"
   ansible.builtin.systemd:
     name: "{{ item }}"
@@ -9,7 +9,7 @@
     - snap.oracle-cloud-agent.oracle-cloud-agent-updater
     - snap.oracle-cloud-agent.oracle-cloud-agent
 
-- name: stop and disable snapd
+- name: Stop and disable snapd
   when: ansible_distribution == 'Ubuntu'
   ansible.builtin.systemd:
     name: "{{ item }}"

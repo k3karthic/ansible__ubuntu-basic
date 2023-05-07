@@ -1,43 +1,43 @@
 ---
-- name: update apt
+- name: Update apt
   hosts: all
   become: yes
 
   tasks:
-    - name: disable root ssh login
+    - name: Disable root ssh login
       ansible.builtin.command:
         cmd: sed -i 's/^#PermitRootLogin prohibit-password.*/PermitRootLogin no/' /etc/ssh/sshd_config
 
-    - name: update repositories
+    - name: Update repositories
       ansible.builtin.apt:
           cache_valid_time: 86400
           update_cache: yes
 
-- name: install anti malware
+- name: Install anti malware
   hosts: all
   become: yes
   roles:
     - malware
 
-- name: configure 100% swap space
+- name: Configure 100% swap space
   hosts: all
   become: yes
   roles:
     - swap
 
-- name: install fail2ban
+- name: Install fail2ban
   hosts: all
   become: yes
   roles:
     - fail2ban
 
-- name: lower mem consumption
+- name: Lower mem consumption
   hosts: all
   become: yes
   roles:
     - lowmem
 
-- name: weekly reboot
+- name: Weekly reboot
   hosts: all
   become: yes
   roles:

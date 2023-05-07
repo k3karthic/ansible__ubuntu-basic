@@ -1,5 +1,5 @@
 ---
-- name: install reboot script
+- name: Install reboot script
   ansible.builtin.copy:
     src: reboot.sh
     dest: /root/reboot.sh
@@ -7,7 +7,7 @@
     group: root
     mode: "0700"
 
-- name: run reboot every sunday
+- name: Run reboot every sunday
   ansible.builtin.cron:
     name: "update and reboot"
     minute: "30"

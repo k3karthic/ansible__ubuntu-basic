@@ -1,10 +1,10 @@
 ---
-- name: install dependencies
+- name: Install dependencies
   ansible.builtin.apt:
     name: fail2ban
     state: present
 
-- name: strict ssh jail
+- name: Strict ssh jail
   ansible.builtin.copy:
     src: sshd.conf
     dest: /etc/fail2ban/jail.d/sshd.conf
@@ -12,7 +12,7 @@
     group: "root"
     mode: "0644"
 
-- name: enable & run fail2ban
+- name: Enable & run fail2ban
   ansible.builtin.systemd:
     name: fail2ban
     enabled: True
