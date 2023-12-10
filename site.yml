@@ -12,6 +12,15 @@
       ansible.builtin.apt:
           cache_valid_time: 86400
           update_cache: yes
+    - name: Install cron
+      ansible.builtin.apt:
+        name: cron
+        state: present
+
+    - name: Install logrotate
+      ansible.builtin.apt:
+        name: logrotate
+        state: present
 
 - name: Install anti malware
   hosts: all
