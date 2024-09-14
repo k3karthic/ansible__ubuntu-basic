@@ -23,12 +23,6 @@
         name: logrotate
         state: present
 
-- name: Install anti malware
-  hosts: all
-  become: yes
-  roles:
-    - malware
-
 - name: Configure 100% swap space
   hosts: all
   become: yes
